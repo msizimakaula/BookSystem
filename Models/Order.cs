@@ -24,6 +24,10 @@ namespace BulkyBook.Models
 
         [Range(1, 2, ErrorMessage = "Quantity must be not be more than 2")]
         public int Quantity { get; set;}
+
+        // New fields
+        public string Status { get; set; } = "Pending"; // Pending, Approved, Rejected
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 
 }

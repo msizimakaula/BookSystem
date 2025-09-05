@@ -1,0 +1,27 @@
+﻿@model IEnumerable<BulkyBook.Models.Order>
+
+<h2>Manage Orders</h2>
+
+@foreach (var order in Model)
+{
+    <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+            <h5>Order ID: @order.Id</h5>
+            <p>User: @order.Name</p>
+            <p>Book ID: @order.Id</p>
+            <p>Created At: @order.CreatedAt.ToString("g")</p>
+
+            @if (order.Status == "Pending")
+            {
+                <div class="d-flex gap-2">
+                    <a asp-action="Approve" asp-route-id="@order.Id" class="btn btn-success">Approve</a>
+                    <a asp-action="Reject" asp-route-id="@order.Id" class="btn btn-danger">Reject</a>
+                </div>
+            }
+            else
+            {
+                <input value="@order.Status" class="form-control" readonly />
+            }
+        </div>
+    </div>
+}

@@ -1,4 +1,4 @@
-﻿@model Order
+﻿@model BulkyBook.Models.Order
 
 @{
     ViewData["Title"] = "Place Order";
@@ -7,6 +7,7 @@
 <h2>Place Order</h2>
 
 <form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
     <div class="form-group">
         <label asp-for="Name"></label>
         <input asp-for="Name" class="form-control" />
@@ -36,6 +37,24 @@
         <input asp-for="Quantity" class="form-control" />
         <span asp-validation-for="Quantity" class="text-danger"></span>
     </div>
+@*     <div class="form-group">
+    <label asp-for="Status"></label>
+   
+        <div class="d-flex gap-2">
+            <a asp-action="Approve"  class="btn btn-success">Approve</a>
+            <a asp-action="Reject"  class="btn btn-danger">Reject</a>
+        </div>
+
+        <input asp-for="Status" class="form-control" readonly />
+    
+    <span asp-validation-for="Status" class="text-danger"></span>
+</div> *@
+
+@* <div class="form-group">
+    <label asp-for="CreatedAt"></label>
+    <input asp-for="CreatedAt" class="form-control" readonly />
+</div> *@
+
 
     @* <div class="form-group">
         <label asp-for="CategoryId">Category</label>
@@ -51,7 +70,7 @@
         <span asp-validation-for="BookTitle" class="text-danger"></span>
     </div> *@
 
-    <button type="submit" class="btn btn-primary mt-2">Place Order</button>
+    <button type="submit" class="btn btn-primary mt-2">Reserve A Book</button>
 </form>
 
 @section Scripts {

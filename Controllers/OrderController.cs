@@ -45,6 +45,8 @@ namespace BulkyBook.Controllers
         {
             if (ModelState.IsValid)
             {
+                order.Status = "Pending";         // default status
+                order.CreatedAt = DateTime.Now;   // set timestamp
                 _db.Orders.Add(order);
                 await _db.SaveChangesAsync();
                 // Get the logged-in user's email
@@ -61,6 +63,7 @@ namespace BulkyBook.Controllers
 
             // If model is invalid, repopulate categories
             ViewBag.Categories = _db.Categories
+                 .Where(c => c.Status == "Available")
                 .Select(c => new SelectListItem
                 {
                     Value = c.Id.ToString(),
