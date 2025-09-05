@@ -30,6 +30,13 @@ builder.Services.AddIdentity<Users, IdentityRole>(options =>
 // 4. Add Razor runtime compilation (optional)
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
+//today
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login";
+    options.AccessDeniedPath = "/Account/AccessDenied";
+});
+
 var app = builder.Build();
 
 // 5. Configure middleware

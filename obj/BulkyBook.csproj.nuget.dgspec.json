@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\10118323\\Desktop\\BookSystem-master\\BookSystem-master\\BulkyBook\\BulkyBook.csproj": {}
+    "C:\\Users\\10118323\\source\\repos\\BookSystem-master\\BulkyBook\\BulkyBook.csproj": {}
   },
   "projects": {
-    "C:\\Users\\10118323\\Desktop\\BookSystem-master\\BookSystem-master\\BulkyBook\\BulkyBook.csproj": {
+    "C:\\Users\\10118323\\source\\repos\\BookSystem-master\\BulkyBook\\BulkyBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\10118323\\Desktop\\BookSystem-master\\BookSystem-master\\BulkyBook\\BulkyBook.csproj",
+        "projectUniqueName": "C:\\Users\\10118323\\source\\repos\\BookSystem-master\\BulkyBook\\BulkyBook.csproj",
         "projectName": "BulkyBook",
-        "projectPath": "C:\\Users\\10118323\\Desktop\\BookSystem-master\\BookSystem-master\\BulkyBook\\BulkyBook.csproj",
+        "projectPath": "C:\\Users\\10118323\\source\\repos\\BookSystem-master\\BulkyBook\\BulkyBook.csproj",
         "packagesPath": "C:\\Users\\10118323\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\10118323\\Desktop\\BookSystem-master\\BookSystem-master\\BulkyBook\\obj\\",
+        "outputPath": "C:\\Users\\10118323\\source\\repos\\BookSystem-master\\BulkyBook\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

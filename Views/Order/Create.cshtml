@@ -26,12 +26,24 @@
     </div>
 
     <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Quantity"></label>
+        <input asp-for="Quantity" class="form-control" />
+        <span asp-validation-for="Quantity" class="text-danger"></span>
+    </div>
+
+    @* <div class="form-group">
         <label asp-for="CategoryId">Category</label>
         <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categories">
             <option value="">-- Select Category --</option>
         </select>
         <span asp-validation-for="CategoryId" class="text-danger"></span>
-    </div>
+    </div> *@
 
     @* <div class="form-group">
         <label asp-for="BookTitle"></label>
@@ -50,7 +62,7 @@
     <!-- SweetAlert2 script -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script>
+    @* <script>
         // Show success popup if order was placed
         @if (TempData["OrderSuccess"] != null)
         {
@@ -63,5 +75,5 @@
                 });
                 </text>
         }
-    </script>
+    </script> *@
 }

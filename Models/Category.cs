@@ -11,8 +11,6 @@ namespace BulkyBook.Models
         [Required]
         public string Name { get; set; }
 
-        public string Title { get; set; }
-
 
         [DisplayName("Display Order")] //naming it your way not the model way
         [Range(0,100, ErrorMessage ="Display Order must be between 1 and 100")]

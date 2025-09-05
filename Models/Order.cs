@@ -21,6 +21,9 @@ namespace BulkyBook.Models
 
         [Required]
         public int CategoryId { get; set; }
+
+        [Range(1, 2, ErrorMessage = "Quantity must be not be more than 2")]
+        public int Quantity { get; set;}
     }
 
 }
