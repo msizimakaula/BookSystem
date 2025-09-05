@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace BulkyBook.Controllers
 {
@@ -108,5 +109,30 @@ namespace BulkyBook.Controllers
             TempData["success"] = "Book deleted successfully ❌";
             return RedirectToAction(nameof(Index));
         }
+
+        [Authorize] // accessible to all logged-in users
+        public IActionResult CustomerBooks(int? bookId) // make it nullable
+        {
+            // Get all available books, newest first
+            var books = _db.Books
+                .Include(b => b.Category)
+                .Where(b => b.Status == "Available")
+                //.OrderByDescending(b => b.CreatedAt)
+                .ToList();
+
+            // If a specific bookId is passed (optional)
+            if (bookId.HasValue)
+            {
+                var book = _db.Books.FirstOrDefault(b => b.BookId == bookId.Value);
+                if (book != null)
+                {
+                    ViewBag.BookTitle = book.Title;
+                    ViewBag.BookId = book.BookId;
+                }
+            }
+
+            return View(books); // always return the view
+        }
+
     }
 }
